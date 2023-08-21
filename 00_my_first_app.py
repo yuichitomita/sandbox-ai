@@ -7,15 +7,16 @@ def main():
     llm = ChatOpenAI(temperature=0)
 
     st.set_page_config(
-        page_title="My Great ChatGPT",
+        page_title="ChatGPT クローン",
         page_icon="🤗"
     )
-    st.header("My Great ChatGPT 🤗")
+    st.header("ChatGPT クローン")
 
     # チャット履歴の初期化
     if "messages" not in st.session_state:
         st.session_state.messages = [
-            SystemMessage(content="You are a helpful assistant.")
+            SystemMessage(content="You are a helpful assistant."),
+            # SystemMessage(content="絶対に関西弁で返答してください"),
         ]
 
     # ユーザーの入力を監視
