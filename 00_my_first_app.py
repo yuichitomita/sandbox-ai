@@ -15,8 +15,8 @@ def main():
     # チャット履歴の初期化
     if "messages" not in st.session_state:
         st.session_state.messages = [
-            SystemMessage(content="You are a helpful assistant."),
-            # SystemMessage(content="絶対に関西弁で返答してください"),
+            # SystemMessage(content="You are a helpful assistant."),
+            SystemMessage(content="絶対に関西弁で返答してください"),
         ]
 
     # ユーザーの入力を監視
