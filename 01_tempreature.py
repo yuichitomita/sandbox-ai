@@ -10,7 +10,7 @@ messages = [
     SystemMessage(content="You are a helpful assistant."),
     HumanMessage(content=message)
 ]
-for temperature in [0, 0.5, 1.0, 2.0]:
+for temperature in [0, 1, 2]:
     print(f'==== temp: {temperature}')
     llm = ChatOpenAI(model_name="gpt-4",temperature=temperature)
 
