@@ -14,7 +14,6 @@ for temperature in [0, 1, 2]:
     print(f'==== temp: {temperature}')
     llm = ChatOpenAI(model_name="gpt-4",temperature=temperature)
 
-    # llm = ChatOpenAI(temperature=temperature)
     for i in range(5):
         print(llm(messages).content)
        
