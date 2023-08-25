@@ -1,8 +1,7 @@
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import (
     SystemMessage,  # システムメッセージ
-    HumanMessage,  # 人間の質問
-    AIMessage  # ChatGPTの返答
+    HumanMessage  # 人間の質問
 )
 
 message = "「名探偵コナン」の映画風タイトルを一つ考えて"
