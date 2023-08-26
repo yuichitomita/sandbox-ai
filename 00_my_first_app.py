@@ -8,7 +8,7 @@ def main():
 
     st.set_page_config(
         page_title="ChatGPT クローン",
-        page_icon="🤗"
+        page_icon=""
     )
     st.header("ChatGPT クローン")
 
