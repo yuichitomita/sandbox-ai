@@ -37,7 +37,7 @@ examples = [
 
 # 予測
 predictions = chain.apply(examples)
-predictions
+print(predictions)
 
 # 言語モデルによる評価
 eval_chain = QAEvalChain.from_llm(
