@@ -5,7 +5,6 @@ from langchain.schema import (SystemMessage, HumanMessage, AIMessage)
 
 def main():
     llm = ChatOpenAI(temperature=0)
-
     st.set_page_config(
         page_title="ChatGPT クローン",
         page_icon=""
