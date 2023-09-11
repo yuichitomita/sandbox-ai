@@ -1,0 +1,34 @@
+import gradio as gr
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+from langchain.agents import load_tools, initialize_agent, AgentType
+from langchain.llms import OpenAI
+from googletrans import Translator
+
+# APIキーの設定
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+os.environ["OPENAI_API_KEY"] = os.environ.get("API_KEY")
+
+# 言語モデル(LLM)とツールセットを初期化
+llm = OpenAI(temperature=0)
+tools = load_tools(["wikipedia"], llm=llm)
+agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True)
+
+# プロンプトを処理し、レスポンスを生成する関数を定義
+def langchain_bot(prompt):
+    if prompt:
+        text = agent.run(prompt)
+        return text
+    return "プロンプトを入力するとWikipedia風のレスポンスが返ってくるよ"
+
+# Gradioインターフェイスのカスタマイズと起動
+iface = gr.Interface(fn=langchain_bot, 
+inputs=gr.inputs.Textbox(lines=5, placeholder="ここにプロンプトを入力してください..."), 
+outputs=gr.outputs.Textbox(), title="Wikipedia Langchain Bot 🦜",
+description="Langchain AIを使用してWikipedia風のレスポンスを生成")
+
+# インターフェイスを起動
+iface.launch()
