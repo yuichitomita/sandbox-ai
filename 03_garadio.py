@@ -12,7 +12,6 @@ from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.chains import ConversationChain
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-# from langchain.callbacks.base import CallbackManager
 from langchain.callbacks.manager import AsyncCallbackManager
 
 import gradio as gr
