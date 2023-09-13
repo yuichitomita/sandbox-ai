@@ -47,6 +47,7 @@ memory = ConversationBufferWindowMemory(k=3, return_messages=True)
 # 会話チェーン
 conversation = ConversationChain(memory=memory, prompt=prompt, llm=llm, verbose=True)
 
+
 # フロントエンド
 css = """
 .message.user{
