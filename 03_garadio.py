@@ -1,4 +1,5 @@
 import os
+import gradio as gr
 
 from os.path import join, dirname
 from dotenv import load_dotenv
@@ -13,8 +14,6 @@ from langchain.memory import ConversationBufferWindowMemory
 from langchain.chains import ConversationChain
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.callbacks.manager import AsyncCallbackManager
-
-import gradio as gr
 
 # APIキーの設定
 dotenv_path = join(dirname(__file__), '.env')
