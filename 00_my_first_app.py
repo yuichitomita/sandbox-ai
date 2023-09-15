@@ -11,7 +11,7 @@ def main():
     )
     st.header("ChatGPT クローン")
 
-    # チャット履歴の初期化
+    # チャット履歴の初期化/
     if "messages" not in st.session_state:
         st.session_state.messages = [
             # SystemMessage(content="You are a helpful assistant."),
