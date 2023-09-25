@@ -9,7 +9,7 @@ generator = pipeline("text-generation", model=model, tokenizer=tokenizer, device
 set_seed(101)
  
 text = generator(
-    "おはようございます、今日の天気は",
+    "おはようございます、今日の天気はどうですか",
     max_length=30,
     do_sample=True,
     pad_token_id=tokenizer.pad_token_id,
